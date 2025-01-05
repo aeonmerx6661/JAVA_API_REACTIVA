@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar Persona</title>
+    <style>
+        *{
+            text-align: center !important ;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<h1>AGREGAR PERSONA</h1>
+<a th:href="@{/personas}">INICIO</a>
+<br>
+<form th:action="@{/guardarpersona}" method="post" th:object="${persona}">
+    <input type="hidden" name="id" th:field="*{id}">
+    <label for="nombres"> NOMBRES</label>
+    <input type="text" name="nombres" id="nombres" placeholder="Escribe los nombres" class="form-control" th:field="*{nombres}">
+    <label for="apellidos"> APELLIDOS</label>
+    <input type="text" name="apellido" id="apellidos" placeholder="Escribe apellidos" class="form-control" th:field="*{apellidos}">
+    <label for="telefono">TELÈFONO</label>
+    <input type="text" name="telefono" id="telefono" placeholder="Escribe el telèfono" class="form-control" th:field="*{telefono}">
+    <label for="correo"> CORREO</label>
+    <input type="email" name="correo" id="correo" placeholder="Escribe el correo" class="form-control" th:field="*{correo}">
+    <br>
+    <input type="submit" class="btn btn-primary" name="guardar" value="Guardar">
+</form>
+</body>
+</html>
